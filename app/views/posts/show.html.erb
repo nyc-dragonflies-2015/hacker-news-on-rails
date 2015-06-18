@@ -10,6 +10,6 @@
 <br>
 <br>
 <% @comments.each do |comment| %>
-  <%= comment.user.username %> <%= time_ago_in_words(comment.created_at) %><br>
-  <%= comment.text %>
+  <!-- fill in comment user username %> --> <%= time_ago_in_words(comment.created_at) %><br>
+  <%= comment.text %><br><br>
 <% end %>

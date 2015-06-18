@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
   root 'posts#index'
 
+  resources :users, only: [] do
+    resources :comments, only: [:index]
+    resources :posts, only: [:index]
+  end
+
   resources :posts, only:[:new, :index, :create, :show] do
     resources :comments, only: [:create, :index]
   end
-
-  resources :users, only: [:create, :new]
 
   get '/login' => 'sessions#index'
   post '/login' => 'sessions#create', as: 'create_session'
