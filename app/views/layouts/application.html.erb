@@ -8,7 +8,8 @@
 </head>
 <body>
 <div id="nav-bar">
-  <%= link_to "Hacker News", root_path %> new | threads | comments | show | ask | jobs | submit
+  <!-- Need to correct comments link -->
+  <%= link_to "Hacker News", root_path %> new | threads | <%= link_to "comments", root_path %> | show | ask | jobs | submit | <%= link_to "login", login_path %>
   <div>
 <%= yield %>
 
