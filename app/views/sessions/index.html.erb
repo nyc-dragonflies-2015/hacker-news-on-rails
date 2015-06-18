@@ -1,0 +1,19 @@
+<h3>Login</h3>
+<%= form_for login_path do |f|  %>
+  <p><%= f.label :username %>
+  <%= f.text_field :username %></p>
+  <p><%= f.label :password %>
+  <%= f.password_field :password %></p>
+  <%= f.submit "Login" %>
+<% end %>
+
+<h3>Create Account</h3>
+<%= form_for login_path do |f|  %>
+  <p><%= f.label :username %>
+  <%= f.text_field :username %></p>
+  <p><%= f.label :password %>
+  <%= f.password_field :password %></p>
+  <%= f.submit "Login" %>
+<% end %>
+
+<!-- Need to change form_for params -->
