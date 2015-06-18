@@ -5,15 +5,12 @@ class CommentsController < ApplicationController
   end
 
   def create
-    # @comment = Comment.create(comment_params)
-    # redirect_to post_path(@comment.post_id)
-
+    require_login
     comment = Comment.create(comment_params)
     post = Post.find(params[:post_id])
     post.comments << comment
     redirect_to post_path(post.id)
   end
-
 
   private
 

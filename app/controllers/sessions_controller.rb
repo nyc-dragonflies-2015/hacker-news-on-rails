@@ -5,9 +5,9 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by(username: user_params[:username])
-    if user.password == params[:password]
+    if user.password == user_params[:password]
       session[:user_id] = user.id
-      redirect_to user_comments_path
+      redirect_to root_path
     else
       redirect_to root_path
     end
