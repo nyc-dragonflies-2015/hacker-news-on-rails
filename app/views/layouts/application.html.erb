@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>HackerNewsOnRails</title>
+  <title>Hacker News</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -9,7 +9,7 @@
 <body>
 <div id="nav-bar">
   <!-- Need to correct comments link -->
-  <%= link_to "Hacker News", root_path %> new | threads | <%= link_to "comments", root_path %> | show | ask | jobs | submit | <%= link_to "login", login_path %>
+  <%= link_to "Hacker News", root_path %> new | threads | <%= link_to "comments", root_path %> | show | ask | jobs | submit | <% if logged_in?  %> <%= link_to 'Logout', logout_path, method: 'delete' %> <% else %> <%= link_to 'Log In', login_path %> <% end %>
   <div>
 <%= yield %>
 

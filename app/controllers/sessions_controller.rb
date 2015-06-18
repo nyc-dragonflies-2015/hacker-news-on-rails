@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  def new
+  def index
     @user = User.new
   end
 
@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     user = User.find_by(username: user_params[:username])
     if user.password == params[:password]
       session[:user_id] = user.id
-      redirect_to root_path
+      redirect_to user_comments_path
     else
       redirect_to root_path
     end
