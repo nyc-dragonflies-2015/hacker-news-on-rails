@@ -1,3 +1,4 @@
 <% @posts.each do |post| %>
-  <h4><%= link_to post.title, post_path(post.id) %> | | <%= post.user.username %></h4>
+  <h3><%= link_to post.title, post.url %></h3>
+  <p>by <%= post.user.username %> <%= time_ago_in_words(post.created_at) %> | <%= link_to (post.comments.count.to_s  + " comments"), post_path(post.id) %></p>
 <% end %>
