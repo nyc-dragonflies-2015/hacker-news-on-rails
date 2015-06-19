@@ -1,5 +1,5 @@
 <div id="nav-bar">
-  <%= link_to "Hacker News", root_path %> new | threads | <%= link_to "comments", root_path %> | show | ask | jobs | submit |
+  <%= link_to "Hacker News", root_path %> <%= link_to "new", new_post_path %> | threads | <%= link_to "comments", root_path %> | show | ask | jobs | submit |
   <% if logged_in?  %>
     <%= link_to 'Logout', logout_path, method: 'delete' %>
   <% else %>
