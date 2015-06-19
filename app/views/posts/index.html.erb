@@ -1,4 +1,6 @@
 <% @posts.each do |post| %>
   <h3><%= link_to post.title, post.url %></h3>
-  <p><%= link_to "Vote!", root_path, id: "vote" %> <%= post.post_votes.count %> points by <%= post.user.username %> <%= time_ago_in_words(post.created_at) %> | <%= link_to (post.comments.count.to_s  + " comments"), post_path(post.id) %></p>
+  <p>
+    <%= link_to "Vote!", post_post_votes_path(post.id), id: "vote" %>
+    <%= post.post_votes.count %> points by <%= post.user.username %> <%= time_ago_in_words(post.created_at) %> | <%= link_to (post.comments.count.to_s  + " comments"), post_path(post.id) %></p>
 <% end %>
