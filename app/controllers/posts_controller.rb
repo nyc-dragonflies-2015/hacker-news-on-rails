@@ -8,9 +8,10 @@ class PostsController < ApplicationController
   end
 
   def create
+    require_login
     @post = Post.new(post_params)
       if @post.save
-        @user = session[:user_id]
+        @user = User.find_by(id: session[:user_id])
         @user.posts << @post
         redirect_to root_path
       else

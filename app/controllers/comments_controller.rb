@@ -6,10 +6,11 @@ class CommentsController < ApplicationController
 
   def create
     require_login
-    comment = Comment.create(comment_params)
-    post = Post.find(params[:post_id])
-    post.comments << comment
-    redirect_to post_path(post.id)
+    @comment = Comment.create(comment_params)
+    @post = Post.find(params[:post_id])
+    @user = User.find_by(id: session[:user_id])
+    @post.comments << @comment
+    redirect_to post_path(@post.id)
   end
 
   private
